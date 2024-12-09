@@ -38,4 +38,5 @@ public class InvestigadorServicio {
     public void eliminarInvestigador(Long id) {
         investigadorRepo.deleteById(id);
     }
+
 }

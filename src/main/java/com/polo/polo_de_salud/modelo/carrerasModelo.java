@@ -9,8 +9,9 @@ import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@SuppressWarnings("hiding")
 @Entity
-public class carrerasModelo<usuarios> {
+public class carrerasModelo<usuariosModelo> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +19,8 @@ public class carrerasModelo<usuarios> {
     private Long idCarrera;
 
     @ManyToOne
-    @JoinColumn(name = "id_persona", foreignKey = @ForeignKey(name = "carreras_ibfk_1"))
-    private usuarios usuario; // Suponiendo que hay una clase Persona que representa la tabla persona
+    @JoinColumn(name = "id_usuario", foreignKey = @ForeignKey(name = "carreras_ibfk_1"))
+    private usuariosModelo usuario;
 
     @Column(name = "nombre_carrera", nullable = false, length = 50)
     private String nombreCarrera;
@@ -49,11 +50,11 @@ public class carrerasModelo<usuarios> {
         this.idCarrera = id;
     }
 
-    public usuarios getusuario() {
+    public usuariosModelo getusuario() {
         return usuario;
     }
 
-    public void setusuario(usuarios usuario) {
+    public void setusuario(usuariosModelo usuario) {
         this.usuario = usuario;
     }
 

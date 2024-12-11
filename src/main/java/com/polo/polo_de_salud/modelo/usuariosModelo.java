@@ -1,39 +1,33 @@
 package com.polo.polo_de_salud.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
-public class usuariosModelo<Rol> {
+@Table(name = "usuarios") // Nombre de la tabla en la base de datos
+public class usuariosModelo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Usuario")
+    @Column(name = "idUsuario")
     private Integer idUsuario;
 
     @ManyToOne
-    @JoinColumn(name = "id_rol", foreignKey = @ForeignKey(name = "usuarios_ibfk_1"))
-    private Rol rol; // Suponiendo que hay una clase Rol que representa la tabla rol
+    @JoinColumn(name = "id_rol", nullable = false, foreignKey = @ForeignKey(name = "usuarios_ibfk_1")) // Relación con la tabla de roles
+    private rolModelo rol;
 
-    @Column(name = "name", nullable = false, length = 50)
+    @Column(name = "nombre", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "email", nullable = false, length = 64)
+    @Column(name = "email", nullable = false, length = 64, unique = true)
     private String email;
 
     @Column(name = "fono", nullable = false)
     private Integer fono;
 
-    @Column(name = "rut", nullable = false)
+    @Column(name = "rut", nullable = false) // RUT
     private Integer rut;
 
-    // Getters and Setters
+    // Getters y Setters
 
     public Integer getIdUsuario() {
         return idUsuario;
@@ -43,11 +37,11 @@ public class usuariosModelo<Rol> {
         this.idUsuario = idUsuario;
     }
 
-    public Rol getRol() {
+    public rolModelo getRol() {
         return rol;
     }
 
-    public void setRol(Rol rol) {
+    public void setRol(rolModelo rol) {
         this.rol = rol;
     }
 
@@ -82,6 +76,4 @@ public class usuariosModelo<Rol> {
     public void setRut(Integer rut) {
         this.rut = rut;
     }
-
-		
 }

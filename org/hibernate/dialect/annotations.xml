@@ -1,0 +1,8 @@
+<root>
+    <item name='org.hibernate.dialect.Dialect org.hibernate.engine.jdbc.env.spi.IdentifierHelper buildIdentifierHelper(org.hibernate.engine.jdbc.env.spi.IdentifierHelperBuilder, java.sql.DatabaseMetaData)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='org.hibernate.dialect.Dialect org.hibernate.engine.jdbc.env.spi.IdentifierHelper buildIdentifierHelper(org.hibernate.engine.jdbc.env.spi.IdentifierHelperBuilder, java.sql.DatabaseMetaData) 1'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+</root>

@@ -1,9 +1,8 @@
 package com.polo.polo_de_salud.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.polo.polo_de_salud.modelo.administradorModelo;
 
-public interface administradorRepositorio extends JpaRepository <administradorModelo, Long>{
+public interface administradorRepositorio extends JpaRepository<administradorModelo, Long> {
 
 }
